@@ -2,8 +2,8 @@ import requests
 import json
 
 def quiz_bot(text):
-    BOT_TOKEN = "8369470525:AAFpexj-b3QUt8eo8588TyLwjqMr9ARRSEc"
-    CHAT_ID = -1002593491038
+    BOT_TOKEN = "8052074681:AAGJqQfUkOH-51n-EhJgS6ndrH7LtlATsCQ"
+    CHAT_ID = -4021310778
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPoll"
 
     # Split by commas, strip spaces, ignore empty items
@@ -43,3 +43,4 @@ def quiz_bot(text):
             return f"Error sending question {idx}: {response.text}"
 
     return "All questions sent successfully!"
+
