@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Auto Quiz</title>
+
+    <style>
+        h1.first {
+            color: #ff2414;
+            text-align: center;
+            font-style: italic;
+        }
+
+        #questions {
+            font-style: italic;
+            border-radius: 0cm;
+            border-style: solid;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="first">Create telegram quiz</h1>
+    <h2>SEND QUESTIONS</h2>
+    <form action="/submit" method="post">
+        <label for="questions">Questions:</label>
+        <input type="text" name="questions" id="questions" required><br><br>
+
+        <input type="submit" value="send" class="button">
+    </form>
+</body>
+
+</html>
