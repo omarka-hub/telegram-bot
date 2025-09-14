@@ -9,8 +9,9 @@ def quiz_bot(text):
     # Split by commas, strip spaces, ignore empty items
     items = [i.strip() for i in text.strip().split(",") if i.strip()]
 
-
-
+    if len(items) % 6 != 0:
+        return "Error: Invalid input format. Each question must have 4 options and a correct index."
+        
     # Group into chunks of 6
     groups = [items[i:i+6] for i in range(0, len(items), 6)]
 
@@ -41,5 +42,6 @@ def quiz_bot(text):
             return f"Error sending question {idx}: {response.text}"
 
     return "All questions sent successfully!"
+
 
 
