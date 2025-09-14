@@ -32,7 +32,7 @@ def quiz_bot(text):
             "question": question,
             "options": json.dumps(options),
             "type": "quiz",
-            "correct_option_id": correct_option_id,
+            "correct_option_id": int(correct_option_id),
             "is_anonymous": True,
             "explanation": "Quiz"
         }
@@ -42,6 +42,7 @@ def quiz_bot(text):
             return f"Error sending question {idx}: {response.text}"
 
     return "All questions sent successfully!"
+
 
 
 
