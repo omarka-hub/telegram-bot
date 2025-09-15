@@ -11,10 +11,10 @@ def home():
 def submit():
     questions = request.form.get('questions')
     topic = request.form.get('topic')
-    #message = send_message(topic)
+    message = send_message(topic)
     status = quiz_bot(questions)
-    return status
-
+    return "message: ", message, "quize's: ", status
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
+
 
