@@ -2,8 +2,8 @@ import requests
 import json
 
 def quiz_bot(text):
-    BOT_TOKEN = "8369470525:AAFpexj-b3QUt8eo8588TyLwjqMr9ARRSEc"
-    CHAT_ID = -1002593491038
+    BOT_TOKEN = "8052074681:AAGJqQfUkOH-51n-EhJgS6ndrH7LtlATsCQ"
+    CHAT_ID = -4021310778
 
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPoll"
 
@@ -22,7 +22,7 @@ def quiz_bot(text):
             "options": group[1:5],  # Must be a list
             "type": "quiz",
             "correct_option_id": int(group[5]),  # Must be int
-            "is_anonymous": True,
+            "is_anonymous": False,
             "explanation": "Quiz"
         }
         response = requests.post(url, json=payload)  # Use json= instead of data=
@@ -43,9 +43,9 @@ def quiz_bot(text):
 def send_message(topic):
 
     # Replace with your bot token and chat ID
-    BOT_TOKEN = "8369470525:AAFpexj-b3QUt8eo8588TyLwjqMr9ARRSEc"
-    CHAT_ID = -1002593491038
-    MESSAGE = f"Hello, this is a test message from my Telegram bot! {topic}"
+    BOT_TOKEN = "8052074681:AAGJqQfUkOH-51n-EhJgS6ndrH7LtlATsCQ"
+    CHAT_ID = -4021310778
+    MESSAGE = f"السلام عليكم و رحمة الله, هذه 10 اسالة عن محاضرة {topic}, ارجو منكم حلها"
 
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
@@ -61,4 +61,5 @@ def send_message(topic):
         return "✅ Successful!"
     else:
         return f"❌ Failed: {result}"
+
 
